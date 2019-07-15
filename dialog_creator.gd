@@ -24,6 +24,7 @@ func _ready():
 	p2.add_separator("Yet Another Dialog Editor")
 	p2.add_separator("version 0.1")
 	p2.add_item("MENU_HELP_ABOUT")
+	p2.connect("id_pressed", self, "on_help_item_pressed")
 	p3.add_item("ACTIONLIST_HEADER")
 	p3.add_item("ACTIONLIST_TEXT")
 	p3.add_item("ACTIONLIST_SETCHARACTERS")
@@ -48,6 +49,11 @@ func on_file_item_pressed(id):
 			$SaveDialogAs.popup_centered_ratio()
 		6:
 			get_tree().quit()
+
+func on_help_item_pressed(id):
+	match id:
+		2:
+			$About.popup_centered()
 
 func _on_CreateNewDialog():
 	print("Create new Dialog...")
