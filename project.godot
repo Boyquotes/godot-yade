@@ -1,0 +1,84 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Yet Another Dialog Editor"
+run/main_scene="res://dialog_creator.tscn"
+run/disable_stdout=true
+run/disable_stderr=true
+run/low_processor_mode=true
+boot_splash/image="res://splash.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0.760784, 0.827451, 0.670588, 1 )
+config/icon="res://icon.png"
+
+[debug]
+
+settings/fps/force_fps=60
+
+[display]
+
+window/vsync/use_vsync=false
+
+[editor]
+
+active=false
+convert_text_resources_to_binary_on_export=true
+
+[locale]
+
+translations=PoolStringArray( "res://text.de.translation", "res://text.en.translation" )
+locale_filter=[ 0, [ "de", "en" ] ]
+
+[physics]
+
+common/physics_fps=10
+3d/active_soft_world=false
+2d/thread_model=2
+2d/bp_hash_table_size=1024
+common/enable_object_picking=false
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=1
+quality/intended_usage/framebuffer_allocation.mobile=1
+quality/2d/use_pixel_snap=true
+threads/thread_model=2
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+quality/directional_shadow/size=512
+quality/directional_shadow/size.mobile=512
+quality/shadow_atlas/size=512
+quality/shadow_atlas/size.mobile=512
+quality/shadow_atlas/quadrant_0_subdiv=0
+quality/shadow_atlas/quadrant_1_subdiv=0
+quality/shadow_atlas/quadrant_2_subdiv=0
+quality/shadow_atlas/quadrant_3_subdiv=0
+quality/shadows/filter_mode=0
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+quality/shading/force_vertex_shading=true
+quality/shading/force_vertex_shading.mobile=false
+quality/shading/force_lambert_over_burley=true
+quality/shading/force_lambert_over_burley.mobile=false
+quality/shading/force_blinn_over_ggx=true
+quality/shading/force_blinn_over_ggx.mobile=false
+quality/depth_prepass/enable=false
+quality/reflections/atlas_size=0
+quality/reflections/atlas_subdiv=0
+quality/depth/hdr=false
+environment/default_environment="res://default_env.tres"
