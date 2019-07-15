@@ -2,7 +2,7 @@
 
 [ext_resource path="res://dialog_creator.gd" type="Script" id=1]
 [ext_resource path="res://main_font.tres" type="DynamicFont" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://icon.webp" type="Texture" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 12.0
@@ -21,7 +21,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=2]
 script/source = "extends LineEdit
 
 signal focus_changed(idx)
@@ -32,7 +32,7 @@ func _init():
 func _on_action_text_focus_exited():
 	emit_signal(\"focus_changed\", get_parent().get_index())"
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 content_margin_left = 12.0
 content_margin_right = 12.0
 content_margin_top = 24.0
@@ -49,7 +49,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="GDScript" id=6]
+[sub_resource type="GDScript" id=4]
 script/source = "extends TextEdit
 
 signal focus_changed(idx)
@@ -60,7 +60,7 @@ func _init():
 func _on_action_text_focus_exited():
 	emit_signal(\"focus_changed\", get_parent().get_index())"
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=5]
 script/source = "extends MenuButton
 
 func _init():
@@ -98,7 +98,7 @@ func on_file_item_pressed(id):
 		12: $\"../text\".set_text($\"../text\".get_text() + \"[font=<path>]{text}[/font]\")
 		13: $\"../text\".set_text($\"../text\".get_text() + \"[color=<code/name>]{text}[/color]\")"
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=6]
 content_margin_left = 12.0
 content_margin_right = 12.0
 content_margin_top = 24.0
@@ -115,7 +115,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=7]
 content_margin_left = 12.0
 content_margin_right = 12.0
 content_margin_top = 24.0
@@ -132,7 +132,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=8]
 script/source = "extends ConfirmationDialog
 
 signal accepted(text)
@@ -141,7 +141,7 @@ func _on_RenameDialog_confirmed():
 	emit_signal(\"accepted\", $text.text)
 "
 
-[sub_resource type="GDScript" id=11]
+[sub_resource type="GDScript" id=9]
 script/source = "extends LinkButton
 
 func _pressed():
@@ -188,11 +188,11 @@ text = "ACTIONLIST_HEADER_DESC"
 margin_left = 12.0
 margin_top = 38.0
 margin_right = 284.0
-margin_bottom = 50.0
+margin_bottom = 70.0
 custom_fonts/font = ExtResource( 2 )
 max_length = 64
 caret_blink = true
-script = SubResource( 4 )
+script = SubResource( 2 )
 
 [node name="Text" type="GraphNode" parent="actions"]
 margin_left = 296.0
@@ -200,7 +200,7 @@ margin_top = -247.0
 margin_right = 592.0
 margin_bottom = -6.0
 size_flags_horizontal = 3
-custom_styles/frame = SubResource( 5 )
+custom_styles/frame = SubResource( 3 )
 title = "ACTIONLIST_TEXT"
 slot/0/left_enabled = false
 slot/0/left_type = 0
@@ -238,7 +238,7 @@ custom_fonts/font = ExtResource( 2 )
 smooth_scrolling = true
 wrap_enabled = true
 caret_blink = true
-script = SubResource( 6 )
+script = SubResource( 4 )
 
 [node name="add_bbcode" type="MenuButton" parent="actions/Text"]
 margin_left = 12.0
@@ -247,7 +247,7 @@ margin_right = 284.0
 margin_bottom = 235.0
 text = "ACTIONLIST_ADDSTYLE"
 flat = false
-script = SubResource( 7 )
+script = SubResource( 5 )
 
 [node name="SetCharacters" type="GraphNode" parent="actions"]
 margin_left = 592.0
@@ -255,7 +255,7 @@ margin_top = -247.0
 margin_right = 888.0
 margin_bottom = -108.0
 size_flags_horizontal = 3
-custom_styles/frame = SubResource( 8 )
+custom_styles/frame = SubResource( 6 )
 title = "ACTIONLIST_SETCHARACTERS"
 slot/0/left_enabled = false
 slot/0/left_type = 0
@@ -293,7 +293,7 @@ text = "ACTIONLIST_SETCHARACTERS_DESC0"
 margin_left = 12.0
 margin_top = 38.0
 margin_right = 284.0
-margin_bottom = 62.0
+margin_bottom = 70.0
 
 [node name="char" type="LineEdit" parent="actions/SetCharacters/l"]
 margin_right = 134.0
@@ -314,17 +314,17 @@ caret_blink = true
 
 [node name="desc3" type="Label" parent="actions/SetCharacters"]
 margin_left = 12.0
-margin_top = 63.0
+margin_top = 71.0
 margin_right = 284.0
-margin_bottom = 77.0
+margin_bottom = 85.0
 text = "ACTIONLIST_SETCHARACTERS_DESC1"
 
 [node name="r" type="HBoxContainer" parent="actions/SetCharacters"]
 editor/display_folded = true
 margin_left = 12.0
-margin_top = 78.0
+margin_top = 86.0
 margin_right = 284.0
-margin_bottom = 102.0
+margin_bottom = 118.0
 
 [node name="char" type="LineEdit" parent="actions/SetCharacters/r"]
 margin_right = 134.0
@@ -349,7 +349,7 @@ margin_top = -247.0
 margin_right = 1184.0
 margin_bottom = -164.0
 size_flags_horizontal = 3
-custom_styles/frame = SubResource( 9 )
+custom_styles/frame = SubResource( 7 )
 title = "ACTIONLIST_SETEXPRESSION"
 slot/0/left_enabled = false
 slot/0/left_type = 0
@@ -375,7 +375,7 @@ text = "ACTIONLIST_SETEXPRESSION_DESC"
 margin_left = 12.0
 margin_top = 38.0
 margin_right = 284.0
-margin_bottom = 62.0
+margin_bottom = 70.0
 
 [node name="char" type="LineEdit" parent="actions/Expression/l"]
 margin_right = 134.0
@@ -422,7 +422,7 @@ margin_right = 308.0
 margin_bottom = 70.0
 window_title = "Konversation umbenennen,,,"
 resizable = true
-script = SubResource( 10 )
+script = SubResource( 8 )
 
 [node name="text" type="LineEdit" parent="RenameDialog"]
 anchor_right = 1.0
@@ -473,7 +473,7 @@ size_flags_horizontal = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.780392, 1, 0.690196, 1 )
 text = "Visit the GitHub repository"
-script = SubResource( 11 )
+script = SubResource( 9 )
 
 [node name="Navbar" type="HBoxContainer" parent="."]
 editor/display_folded = true

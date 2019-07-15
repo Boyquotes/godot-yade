@@ -23,7 +23,7 @@ run/low_processor_mode=true
 boot_splash/image="res://splash.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.760784, 0.827451, 0.670588, 1 )
-config/icon="res://icon.png"
+config/icon="res://icon.webp"
 
 [debug]
 
