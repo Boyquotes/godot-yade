@@ -1,0 +1,21 @@
+,en,de
+MENU_FILE,File,Datei
+MENU_DIALOGNEW,New dialog...,Neuer Dialog...
+MENU_DIALOGOPEN,Open dialog...,Dialog öffnen...
+MENU_DIALOGSAVE,Save dialog...,Dialog speichern...
+MENU_DIALOGSAVEAS,Save dialog as...,Dialog speichern als...
+MENU_HELP,Help,Hilfe
+MENU_HELP_ABOUT,About...,Info...
+MENU_CLOSE,Close,Schließen
+ACTIONLIST_HEADER,Set header,Setze Titel
+ACTIONLIST_HEADER_DESC,Set the header of the frame to,Setze den Titel des Frames auf
+ACTIONLIST_TEXT,Set text,Setze Text
+ACTIONLIST_TEXT_DESC,Clear the frame and write,Leere den Frame und schreibe
+ACTIONLIST_SETCHARACTERS,Set characters,Setze Personen
+ACTIONLIST_SETCHARACTERS_DESC0,Add characters to the dialog.\nLeft,Füge Personen zu dem Dialog hinzu\nLinks
+ACTIONLIST_SETCHARACTERS_DESC1,Right,Rechts
+ACTIONLIST_SETEXPRESSION,Set expression,Ändere Expression
+ACTIONLIST_SETEXPRESSION_DESC,Change the expression of one character.\nCharacter                    Expression,Wechsle den Ausdruck einer Person.\nPerson                        Ausdruck
+ACTIONLIST_ADDSTYLE,Add BBCode style, BBCode-Stil hinzufügen
+UI_CONVERSATIONS,Conversations,Konversationen
+UI_ELEMENTS,Elements,Elemente

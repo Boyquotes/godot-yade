@@ -1,5 +1,7 @@
 extends Control
 
+const VERSION: String = "0.1.1"
+
 var dialog_data: Dictionary = {"conversations": {}}
 var fpath: String
 var t: String
@@ -22,7 +24,7 @@ func _ready():
 	p.add_item("MENU_CLOSE")
 	p.connect("id_pressed", self, "on_file_item_pressed")
 	p2.add_separator("Yet Another Dialog Editor")
-	p2.add_separator("version 0.1")
+	p2.add_separator("version " + VERSION)
 	p2.add_item("MENU_HELP_ABOUT")
 	p2.connect("id_pressed", self, "on_help_item_pressed")
 	p3.add_item("ACTIONLIST_HEADER")

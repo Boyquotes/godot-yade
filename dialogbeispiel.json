@@ -1,0 +1,78 @@
+{
+    "conversations": {
+        "START_CONVERSATION": [
+            {
+                "type": "setcharacters",
+                "left": [
+                    "",
+                    ""
+                ],
+                "right": [
+                    "Sally",
+                    "happy_say"
+                ]
+            },
+            {
+                "type": "header",
+                "value": "Sally"
+            },
+            {
+                "type": "text",
+                "value": "Hey! Na, wie geht's dir?"
+            },
+            {
+                "type": "setexpression",
+                "character": "Sally",
+                "value": "bored_say"
+            },
+            {
+                "type": "text",
+                "value": "Mir geht's nicht so dolle. Das Wetter ist heute sehr durchwachsen und ich hatte meinen Regenmantel vergessen, als ich vor die Tür ging."
+            },
+            {
+                "type": "setexpression",
+                "character": "Sally",
+                "value": "bored"
+            },
+            {
+                "type": "text",
+                "value": "Blöd gelaufen, ich weiß."
+            },
+            {
+                "type": "setexpression",
+                "character": "Sally",
+                "value": "happy"
+            },
+            {
+                "type": "text",
+                "value": "Aber deswegen lasse ich mir nicht den Tag vermiesen!"
+            },
+            {
+                "type": "setexpression",
+                "character": "Sally",
+                "value": "normal"
+            },
+            {
+                "type": "text",
+                "value": "Ach ja! Sorry, ich muss weg. Wir sehen uns!"
+            }
+        ],
+        "DebugConversation": [
+            {
+                "type": "setcharacters",
+                "left": [
+                    "",
+                    ""
+                ],
+                "right": [
+                    "Sally",
+                    "happy_say"
+                ]
+            },
+            {
+                "type": "text",
+                "value": "Halli hallo hallöchen! Na, wie findest du [color=#ffe300]diesen[/color] Dialog bis jetzt?"
+            }
+        ]
+    }
+}

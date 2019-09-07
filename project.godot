@@ -78,6 +78,7 @@ quality/shading/force_lambert_over_burley.mobile=false
 quality/shading/force_blinn_over_ggx=true
 quality/shading/force_blinn_over_ggx.mobile=false
 quality/depth_prepass/enable=false
+environment/default_clear_color=Color( 0.145098, 0.145098, 0.145098, 1 )
 quality/reflections/atlas_size=0
 quality/reflections/atlas_subdiv=0
 quality/depth/hdr=false
