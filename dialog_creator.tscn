@@ -687,7 +687,7 @@ bbcode_text = "Yet Another Dialog Editor
 Powered by Godot Engine 3.1.1"
 text = "Yet Another Dialog Editor
 
-0.1.1 (release)
+0.1.2 (release)
 Powered by Godot Engine 3.1.1"
 scroll_active = false
 
@@ -730,7 +730,6 @@ margin_right = 188.0
 margin_bottom = 23.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -860,7 +859,7 @@ rect_min_size = Vector2( 308, 0 )
 size_flags_horizontal = 3
 scroll_horizontal_enabled = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ScrollContainer"]
+[node name="ActionList" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ScrollContainer"]
 margin_right = 392.0
 size_flags_horizontal = 3
 

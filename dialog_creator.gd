@@ -1,15 +1,17 @@
 extends Control
 
-const VERSION: String = "0.1.1"
+signal cleanup_finished
+
+const VERSION: String = "0.1.2"
 
 var dialog_data: Dictionary = {"conversations": {}}
-var fpath: String
+var file_path: String
 var t: String
 var convcount: int = 0
 
-onready var Conversations = $MarginContainer/HBoxContainer/VBoxContainer/Conversations
-onready var Elements = $MarginContainer/HBoxContainer/VBoxContainer2/Elements
-onready var ActionList = $MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer
+onready var Conversations : = $MarginContainer/HBoxContainer/VBoxContainer/Conversations as ItemList
+onready var Elements : = $MarginContainer/HBoxContainer/VBoxContainer2/Elements as ItemList
+onready var ActionList : = $MarginContainer/HBoxContainer/ScrollContainer/ActionList as VBoxContainer
 
 func _ready():
 	var p = $Navbar/File.get_popup()
@@ -38,6 +40,7 @@ func _ready():
 	$actions/Text.title = tr("ACTIONLIST_TEXT")
 	$actions/SetCharacters.title = tr("ACTIONLIST_SETCHARACTERS")
 	$actions/Expression.title = tr("ACTIONLIST_SETEXPRESSION")
+	$About/VBoxContainer/RichTextLabel.set_bbcode("Yet Another Dialog Editor\n\n% (release)\nPowered by Godot Engine 3.1.1".format([VERSION], "%"))
 
 func on_file_item_pressed(id):
 	match id:
@@ -63,24 +66,40 @@ func _on_CreateNewDialog():
 
 
 func cleanup_everything():
-	fpath = ""
-	convcount = 0
+	print("[Cleanup] Request accepted. Starting cleanup.")
+	
 	dialog_data.clear()
+	file_path = ""
+	t = ""
+	convcount = 0
+	$Navbar/Path.text = ""
+
+	print("[Cleanup] Erase all children...")
+	if ActionList.get_child_count() > 0:
+		for i in range(ActionList.get_child_count()):
+			print("[Cleanup] Cycle " + str(i) + ", Free node " + str(ActionList.get_child(0)))
+			ActionList.get_child(0).free()
 	Conversations.clear()
 	Elements.clear()
-	$Navbar/Path.text = ""
-	for i in ActionList.get_child_count():
-		ActionList.get_child(0).free()
+
+	print("[Cleanup] Check ActionList...")
+	if ActionList.get_child_count() > 0:
+		print("[Cleanup] Error: The ActionList has children.")
+	else: print("[Cleanup] ActionList is empty.")
+	
+	yield(get_tree(), "idle_frame")
+	print("[Cleanup] Cleanup successful. Emitting signal \"cleanup_finished\"")
+	emit_signal("cleanup_finished")
 
 func _on_FileDialog_file_selected(path):
-	print("Open " + path)
+	print("[FileLoader] Open " + path)
 	
-	#cleanup
-	Conversations.clear()
-	Elements.clear()
-	for i in ActionList.get_child_count():
-		ActionList.get_child(0).free()
-	
+#	cleanup
+	print("[FileLoader] Request full cleanup")
+	cleanup_everything()
+	yield(self, "cleanup_finished")
+	print("[FileLoader] Continue loading")
+
 	var f = File.new()
 	f.open(path, 1)
 	dialog_data.clear()
@@ -88,7 +107,7 @@ func _on_FileDialog_file_selected(path):
 	f.close()
 	if dialog_data.has("conversations"):
 		$Navbar/Path.set_text(path)
-		fpath = path
+		file_path = path
 		for i in dialog_data.conversations.size():
 			Conversations.add_item(str(dialog_data.conversations.keys()[i]))
 	else:
@@ -97,10 +116,10 @@ func _on_FileDialog_file_selected(path):
 func _on_SaveDialog():
 	print("Saving dialog...")
 	save_conversation()
-	if fpath:
+	if file_path:
 		var f = File.new()
-		f.open(fpath, 2)
-		f.store_string(to_json(dialog_data))
+		f.open(file_path, 2)
+		f.store_line(to_json(dialog_data))
 		f.close()
 		print("Dialog saved.")
 	else:
@@ -110,7 +129,7 @@ func _on_SaveDialog():
 func _on_SaveDialogAs_file_selected(path):
 	print("Save Dialog in " + path)
 	save_conversation()
-	fpath = path
+	file_path = path
 	var f = File.new()
 	f.open(path, 2)
 	f.store_string(to_json(dialog_data))
@@ -212,7 +231,7 @@ func _on_conversations_del_pressed():
 
 func _on_conversations_rename_pressed():
 	var i = Conversations.get_selected_items()
-	if i.size() > 0:
+	if i.size() == 1:
 		$RenameDialog.popup_centered()
 		$RenameDialog/text.text = Conversations.get_item_text(i[0])
 
