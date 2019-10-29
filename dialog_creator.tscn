@@ -2,7 +2,7 @@
 
 [ext_resource path="res://dialog_creator.gd" type="Script" id=1]
 [ext_resource path="res://font/notalot35.tres" type="DynamicFont" id=2]
-[ext_resource path="res://icon.webp" type="Texture" id=3]
+[ext_resource path="res://assets/icon.webp" type="Texture" id=3]
 [ext_resource path="res://font/notosans_bold.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -687,7 +687,7 @@ bbcode_text = "Yet Another Dialog Editor
 Powered by Godot Engine 3.1.1"
 text = "Yet Another Dialog Editor
 
-0.1.2 (release)
+0.1.1 (release)
 Powered by Godot Engine 3.1.1"
 scroll_active = false
 
@@ -864,7 +864,6 @@ margin_right = 392.0
 size_flags_horizontal = 3
 
 [node name="splash" type="TextureRect" parent="."]
-editor/display_folded = true
 material = SubResource( 19 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -926,7 +925,7 @@ custom_styles/pressed = SubResource( 24 )
 custom_styles/focus = SubResource( 25 )
 custom_styles/normal = SubResource( 24 )
 custom_fonts/font = SubResource( 26 )
-text = "Neuer Dialog"
+text = "MENU_DIALOGNEW"
 script = SubResource( 27 )
 
 [node name="Tween" type="Tween" parent="splash/Panel/VBoxContainer/Button"]
@@ -947,7 +946,7 @@ custom_styles/pressed = SubResource( 28 )
 custom_styles/focus = SubResource( 29 )
 custom_styles/normal = SubResource( 28 )
 custom_fonts/font = SubResource( 26 )
-text = "Dialogdatei öffnen"
+text = "MENU_DIALOGOPEN"
 script = SubResource( 27 )
 
 [node name="Tween" type="Tween" parent="splash/Panel/VBoxContainer/Button2"]
@@ -966,7 +965,7 @@ custom_styles/pressed = SubResource( 30 )
 custom_styles/focus = SubResource( 31 )
 custom_styles/normal = SubResource( 30 )
 custom_fonts/font = SubResource( 26 )
-text = "Beenden"
+text = "MENU_CLOSE"
 script = SubResource( 27 )
 
 [node name="Tween" type="Tween" parent="splash/Panel/VBoxContainer/Button3"]

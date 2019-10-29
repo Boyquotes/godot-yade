@@ -20,10 +20,10 @@ run/main_scene="res://dialog_creator.tscn"
 run/disable_stdout=true
 run/disable_stderr=true
 run/low_processor_mode=true
-boot_splash/image="res://splash.png"
+boot_splash/image="res://assets/splash.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.760784, 0.827451, 0.670588, 1 )
-config/icon="res://icon.webp"
+config/icon="res://assets/icon.webp"
 
 [debug]
 
@@ -40,7 +40,7 @@ convert_text_resources_to_binary_on_export=true
 
 [locale]
 
-translations=PoolStringArray( "res://text.de.translation", "res://text.en.translation" )
+translations=PoolStringArray( "res://assets/text.de.translation", "res://assets/text.en.translation" )
 locale_filter=[ 0, [ "de", "en" ] ]
 
 [physics]
@@ -82,4 +82,4 @@ environment/default_clear_color=Color( 0.145098, 0.145098, 0.145098, 1 )
 quality/reflections/atlas_size=0
 quality/reflections/atlas_subdiv=0
 quality/depth/hdr=false
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://assets/default_env.tres"
